@@ -24,8 +24,12 @@ public class Tweet {
     @Column
     private String tweet;
 
-    public Tweet(TweetDTO data) {
+    @Column
+    private String avatar;
+
+    public Tweet(TweetDTO data, String avatar) {
         this.username = data.username();
+        this.avatar = avatar;
         this.tweet = data.tweet();
     }
 }
