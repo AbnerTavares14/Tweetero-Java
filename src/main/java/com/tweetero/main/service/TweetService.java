@@ -38,7 +38,7 @@ public class TweetService {
         UserModel user = userRepository.findByUsername(dto.username());
         if (user != null) {
             repository.save(new Tweet(dto, user.getAvatar()));
-            return ResponseEntity.status(HttpStatus.OK).body("OK");
+            return ResponseEntity.status(HttpStatus.CREATED).body("OK");
         } else {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("User doesn't exist!");
         }
