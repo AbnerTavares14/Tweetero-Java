@@ -31,9 +31,7 @@ public class TweetController {
 
     @GetMapping(path = { "/{username}" })
     public List<Tweet> listTweetsByUsername(@PathVariable String username) {
-        List<Tweet> tweets = service.listTweetsOfUser(username);
-        System.out.println(tweets);
-        return tweets;
+        return service.listTweetsOfUser(username);
     }
 
     @PostMapping
